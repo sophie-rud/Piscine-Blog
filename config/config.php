@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 session_set_cookie_params(3600);
 
 
-// Création d'un nouvelle classe : DbConnection
+// Création d'une nouvelle classe : DbConnection
 class DbConnection {
 
     private $dsn;
