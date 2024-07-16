@@ -10,7 +10,7 @@
     
     <header>
 
-        <h1>Blog de la piscine</h1>
+        <!-- <h1>Blog de la piscine</h1> -->
 
         <div class="logo">
             <img src="../public/assets/img/otter-solid.png" alt = logo>

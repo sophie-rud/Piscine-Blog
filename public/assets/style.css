@@ -98,12 +98,12 @@ header {
         border-radius: 30px;
         margin: 3% auto;
         padding: 10px 20px;
+        transition: all 0.8s ease;
     }
 
     .articleBlog:hover {
-        background-color: rgba(131, 209, 251, 0.662);
+        background-color: rgba(40, 70, 236, 0.6);
         transform: scale(1.05);
-
     }
 
 
