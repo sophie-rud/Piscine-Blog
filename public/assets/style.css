@@ -1,0 +1,132 @@
+
+/* @font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat/static/Montserrat-Light.ttf);
+} */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+/* --------------- Général --------------- */
+img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 2% 0px;
+    color: rgb(40, 70, 236);
+    text-transform: uppercase;
+}
+
+
+h2 {
+    text-align: center;
+    padding: 25px;
+    text-transform: uppercase;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+
+/* --------------- HEADER --------------- */
+header {
+    /* background-color: rgb(145, 154, 208); */
+    background-color: rgb(255, 213, 88);
+    color: rgb(40, 70, 236);
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 6%;
+    padding: 1%;
+}
+
+    /* ------ LIST - UL - LI ------ */
+
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    li {
+        text-decoration: none;
+        padding: 5px 20px;
+        /* color: blanchedalmond; */
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(40, 70, 236);
+        font-size: 15px;
+    }
+
+
+
+  /* --------------- MAIN --------------- */
+
+    /* ------ ARTICLE ------ */
+
+    #articles {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .fontDate {
+        font-size: 16px;
+        text-align: center;
+        color: grey;
+    }
+
+    .articleBlog {
+        width: 28%;
+        background-color: rgba(251, 221, 131, 0.662);
+        border-radius: 30px;
+        margin: 3% auto;
+        padding: 10px 20px;
+    }
+
+    .articleBlog:hover {
+        background-color: rgba(131, 209, 251, 0.662);
+        transform: scale(1.05);
+
+    }
+
+
+
+  /* --------------- FOOTER --------------- */
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(232, 204, 121); */
+    background-color: rgb(255, 213, 88);
+    color: rgb(40, 70, 236);
+
+    /* position: fixed;
+    bottom: 0; */
+}
+
+.logoFooter {
+    width: 3%;
+    padding: 1%;
+    color: rgba(43, 178, 212, 0.684);
+}
+
+
