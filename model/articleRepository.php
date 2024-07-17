@@ -38,12 +38,11 @@ class ArticleRepository {
         $stmt->bindParam(':content', $content);
         $stmt->bindParam(':created_at', $created_at);
 
-        // On exécute la requête et on affiche un message de réussite ou d'erreur
-        if ($stmt->execute()) {
-            echo "Nouveau article ajouté avec succès";
-        } else {
-            echo "Erreur lors de l'ajout de l'article";
-        }
+        // On exécute la requête et on enregistre le résultat dans une variable (booléen)
+        $isRequestOk = $stmt->execute();
+
+        return $isRequestOk;
+
     }
 
 }

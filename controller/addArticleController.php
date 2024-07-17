@@ -12,8 +12,10 @@ class AddArticleController
         $created_at = "2024-07-17";
 
         $articleRepository = new ArticleRepository();
-        $articleRepository -> insert($titre, $content, $created_at);
+        // on stocke dans la variable $isRequestOk le résultat issu de la méthode insert()
+        $isRequestOk = $articleRepository -> insert($titre, $content, $created_at);
 
+        require_once ('../template/page/addArticleView.php');
     }
 
 }
