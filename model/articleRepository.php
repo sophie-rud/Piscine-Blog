@@ -4,15 +4,16 @@ require_once('../config/config.php');
 
 
 class ArticleRepository {
+    // Création de la méthode "findArticles" qui fait la requête SQL et qui retourne les articles
+    public function findArticles() {
 
-    public function findAll() {
-
-        // on établit la connexion avec la bdd
+        // on instancie la classe DbConnection
         $dbConnection = new DbConnection();
+        // on appelle la méthode qui établit avec la bdd
         $pdo = $dbConnection -> connect();
 
                 
-        // query() récupère des données de la bdd | ici on sélectionne toutes les colonnes de la table article de la bdd
+        // query() fait une requête vers la bdd -> là on sélectionne toutes les colonnes de la table article de la bdd
         $stmt = $pdo->query("SELECT * FROM article");
         // nous retourne un tableau avec toutes les données précédemment sélectionnées
         $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -21,7 +22,3 @@ class ArticleRepository {
     }
 }
 
-// qui fait la requête SQL et qui retourne les articles
-
-
-// Créez un dossier model au même niveau controller et template. A l'intérieur créez un fichier nommé ArticleRepository.php, contenant une classe ArticleRepository. A l'intérieur, créez une méthode "findArticle" qui fait la requête SQL et qui retourne les articles. Appelez cette méthode depuis votre controleur
