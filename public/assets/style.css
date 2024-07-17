@@ -18,7 +18,7 @@ img {
 
 h1 {
     text-align: center;
-    margin: 2% 0px;
+    margin: 2% 0;
     color: rgb(40, 70, 236);
     text-transform: uppercase;
 }
@@ -33,6 +33,12 @@ h2 {
 h3 {
     text-align: center;
 }
+
+p {
+    color : rgb(40, 70, 236);
+    font-size: 16px;
+}
+
 
 
 
@@ -107,8 +113,24 @@ header {
     }
 
 
+    /* --------------- addArticleView --------------- */
+    form {
+        text-align: center;
+        padding: 20px 0;
+    }
 
-  /* --------------- FOOTER --------------- */
+    .messageOk {
+        color : rgb(40, 70, 236);
+        font-size: 16px;
+        padding: 6px 0 20px 0;
+        text-align: center;
+    }
+
+
+
+
+
+/* --------------- FOOTER --------------- */
 
   footer {
     display: flex;

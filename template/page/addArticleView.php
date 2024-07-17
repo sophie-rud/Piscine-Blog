@@ -4,11 +4,28 @@
 
     <h2>Ajouter un article</h2>
 
+
+    <form method="post">
+
+        <label> Titre
+            <input type="text" id="titre" name="titre" />
+        </label>
+
+        <label> Contenu
+                <input type="text" id="content" name="content" />
+        </label>
+
+        <input type="submit"/>
+
+    </form>
+
+
+
     <?php if($isRequestOk) { ?>
 
-        <p>L'article a bien été enregistré en BDD.</p>
+        <p class="messageOk">L'article a bien été enregistré en BDD</p>
 
-   <?php }; ?>
+    <?php } ?>
 
 </main>
 
