@@ -4,17 +4,22 @@ require_once('../config/config.php');
 
 
 class ArticleRepository {
+
+    private $pdo;
+
+    function __construct() {
+        // On établit la connexion avec la base de données. On instancie la classe DbConnection
+        $dbConnection = new DbConnection();
+        // on appelle la méthode qui établit le lien avec la bdd
+        $this->pdo = $dbConnection -> connect();
+    }
+
+
     // Création de la méthode "findArticles" qui fait la requête SQL et qui retourne les articles
     public function findArticles() {
 
-        // on instancie la classe DbConnection
-        $dbConnection = new DbConnection();
-        // on appelle la méthode qui établit avec la bdd
-        $pdo = $dbConnection -> connect();
-
-                
         // query() fait une requête vers la bdd -> là on sélectionne toutes les colonnes de la table article de la bdd
-        $stmt = $pdo->query("SELECT * FROM article");
+        $stmt = $this->pdo->query("SELECT * FROM article");
         // nous retourne un tableau avec toutes les données précédemment sélectionnées
         $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
@@ -22,13 +27,10 @@ class ArticleRepository {
     }
 
     public function insert($titre, $content, $created_at) {
-        // On établit la connexion avec la base de données
-        $dbConnection = new DbConnection();
-        $pdo = $dbConnection -> connect();
 
         // On prépare la requête d'insertion des données avec des données temporaires
         $sql = "INSERT INTO article (titre, content, created_at) VALUES (:titre, :content, :created_at)";
-        $stmt = $pdo->prepare($sql);
+        $stmt = $this->pdo->prepare($sql);
 
         // On remplace les paramètres précédemment entrés (données temporaires -> :title...) par les "vrais" paramètres.
         // On réalise cette action en plusieurs étapes pour sécuriser les données entrées par l'utilisateur et éviter l'injection SQL.
