@@ -17,8 +17,6 @@ class IndexController {
     }
 }
 
-// création d'une nouvelle instance de la classe IndexController et appel de la méthode index()
-$indexController = new IndexController();
-$indexController->index();
+
 
 

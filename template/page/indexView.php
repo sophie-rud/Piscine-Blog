@@ -19,7 +19,12 @@
 
                 <article class="articleBlog">
                     <h2> <?php echo $article['titre']; ?> </h2>
-                    <a href="http://localhost/piscine-blog/controller/articleController.php?id=<?php echo $article['id_article']; ?>" >Afficher l'article</a>
+                    <div class="actionButtons">
+                        <a href="http://localhost/piscine-blog/public/show-article?id=<?php echo $article['id_article']; ?>" >Afficher l'article</a>
+                        <a href="http://localhost/piscine-blog/public/delete-article?id=<?php echo $article['id_article']; ?>" >Supprimer l'article</a>
+
+                    </div>
+
                     <!-- <p> <?php echo $article['content']; ?> </p> -->
                     <!-- <p class="fontDate"> <?php echo $article['created_at'] ?> </p> -->
                 </article>

@@ -128,6 +128,12 @@ header {
     }
 
 
+/* --------------- indexView --------------- */
+
+.actionButtons {
+    display: flex;
+    justify-content: space-around;
+}
 
 
 

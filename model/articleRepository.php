@@ -61,6 +61,21 @@ class ArticleRepository {
         return $article;
     }
 
+
+    public function deleteArticleById($id_article) {
+        // On définit la requête SQL (supprimer un article selon l'id). :id est une valeur temporaire.
+        $sql = "DELETE FROM article WHERE id_article = :id";
+        // On prépare la requête SQL
+        $stmt = $this->pdo->prepare($sql);
+
+        // On remplace la valeur temporaire par la vraie valeur
+        $stmt->bindParam(':id', $id_article, PDO::PARAM_INT);
+
+        // On éxécute la requête
+        $stmt->execute();
+
+    }
+
 }
 
 

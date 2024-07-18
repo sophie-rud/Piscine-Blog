@@ -28,7 +28,7 @@ class ArticleController
         // On récupère l'id passé en url
         $id = $_GET['id'];
 
-        // On instancie le Repository pour accéder aux méthodes de bdd
+        // On instancie le ArticleRepository
         $articleRepository = new ArticleRepository();
         // On appelle la méthode qui permet de récupérer un article en fonction de son id
         $article = $articleRepository->findOneById($id);
@@ -37,11 +37,20 @@ class ArticleController
     }
 
 
+    public function deleteArticle() {
+        $id = $_GET['id'];
+
+        // On instancie le ArticleRepository
+        $articleRepository = new ArticleRepository();
+        // On appelle la méthode qui permet de supprimer un article en fonction de son id
+        $delete = $articleRepository -> deleteArticleById($id);
+
+
+        // Redirection sur la page d'accueil avec tous les articles après suppression de l'article
+        header('location: http://localhost/piscine-blog/public/');
+        require_once ('../template/page/deleteArticleView.php');
+
+    }
+
 }
 
-
-// $articleController = new ArticleController();
-// $articleController -> addArticle();
-
-$articleController = new ArticleController();
-$articleController -> showArticle();
