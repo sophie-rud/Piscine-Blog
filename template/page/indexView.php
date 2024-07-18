@@ -19,8 +19,9 @@
 
                 <article class="articleBlog">
                     <h2> <?php echo $article['titre']; ?> </h2>
+                    <a href="http://localhost/piscine-blog/controller/articleController.php?id=<?php echo $article['id_article']; ?>" >Afficher l'article</a>
                     <!-- <p> <?php echo $article['content']; ?> </p> -->
-                    <p class="fontDate"> <?php echo $article['created_at'] ?> </p>
+                    <!-- <p class="fontDate"> <?php echo $article['created_at'] ?> </p> -->
                 </article>
 
             <?php } ?>

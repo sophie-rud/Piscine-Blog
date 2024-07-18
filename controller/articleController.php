@@ -25,9 +25,12 @@ class ArticleController
 
     public function showArticle() {
 
+        // On récupère l'id passé en url
         $id = $_GET['id'];
 
+        // On instancie le Repository pour accéder aux méthodes de bdd
         $articleRepository = new ArticleRepository();
+        // On appelle la méthode qui permet de récupérer un article en fonction de son id
         $article = $articleRepository->findOneById($id);
 
         require_once ('../template/page/showArticleView.php');
