@@ -42,7 +42,23 @@ class ArticleRepository {
         $isRequestOk = $stmt->execute();
 
         return $isRequestOk;
+    }
 
+    public function findOneById($id_article) {
+        // On prépare la requête SQL
+        $sql = "SELECT * FROM article WHERE id_article = :id";
+        $stmt = $this->pdo->prepare($sql);
+
+        // On remplace la valeur temporaire par la vraie valeur
+        $stmt->bindParam(':id', $id_article, PDO::PARAM_INT);
+
+        // On exécute la requête
+        $stmt->execute();
+
+        // On affiche le résultat de la requête (ici, 1 article)
+        $article = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $article;
     }
 
 }

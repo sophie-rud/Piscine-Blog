@@ -3,7 +3,7 @@
 require_once ('../config/config.php');
 require_once ('../model/articleRepository.php');
 
-class AddArticleController
+class ArticleController
 {
     public function addArticle() {
 
@@ -23,8 +23,22 @@ class AddArticleController
         require_once('../template/page/addArticleView.php');
     }
 
+    public function showArticle() {
+
+        $id = $_GET['id'];
+
+        $articleRepository = new ArticleRepository();
+        $article = $articleRepository->findOneById($id);
+
+        require_once ('../template/page/showArticleView.php');
+    }
+
+
 }
 
 
-$articleController = new AddArticleController();
-$articleController -> addArticle();
+// $articleController = new ArticleController();
+// $articleController -> addArticle();
+
+$articleController = new ArticleController();
+$articleController -> showArticle();
