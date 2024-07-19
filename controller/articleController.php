@@ -26,8 +26,9 @@ class ArticleController
         // Création de l'objet $twig
         $twig = new \Twig\Environment($loader);
 
-        // On appelle le fichier twig
+        // On appelle le fichier twig et la variable qu'on veut lui envoyer (que twig a besoin d'utiliser)
         echo $twig->render('page/addArticleView.html.twig', [
+            // 'isRequestOk' donnée temporaire, la valeur qu'on veut lui donner dans twig, on pourrait l'appeler 'toto'... | $isRequestOk est la vraie valeur
             'isRequestOk' => $isRequestOk
         ]);
 
@@ -78,9 +79,7 @@ class ArticleController
             $twig = new \Twig\Environment($loader);
 
             // On appelle le fichier twig
-            echo $twig->render('page/deleteArticleFailView.html.twig', [
-                'deleteOK' => $deleteOK
-            ]);
+            echo $twig->render('page/deleteArticleFailView.html.twig');
         }
 
     }
