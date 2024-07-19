@@ -1,0 +1,31 @@
+{% include('partial/header.html.twig') %}
+
+<main>
+
+    <h1>Le super blog de la piscine</h1>
+
+    <section id="articles">
+
+        {% for article in articles %}
+
+            <article class="articleBlog">
+
+                <h2> {{ article.titre }}</h2>
+
+                <div class="actionButtons">
+                    <a href="http://localhost/piscine-blog/public/show-article?id={{ article.id_article }}" >Afficher l'article</a>
+                    <a href="http://localhost/piscine-blog/public/delete-article?id= {{ article.id_article }} >" >Supprimer l'article</a>
+                </div>
+
+                <!-- <p> {{ article.content }} </p> -->
+                <!-- <p class="fontDate"> {{ article.created_at }} </p> -->
+
+            </article>
+
+        {% endfor %}
+
+    </section>
+
+</main>
+
+{% include('partial/footer.html.twig') %}

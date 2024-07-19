@@ -72,7 +72,9 @@ class ArticleRepository {
         $stmt->bindParam(':id', $id_article, PDO::PARAM_INT);
 
         // On éxécute la requête
-        $stmt->execute();
+        $deleteOK = $stmt->execute();
+
+        return $deleteOK;
 
     }
 

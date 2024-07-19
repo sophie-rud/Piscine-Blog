@@ -1,0 +1,16 @@
+{% include('partial/header.html.twig') %}
+
+<main>
+
+        <h1>Le super blog</h1>
+
+        <article>
+            <h2> {{ article.titre }} </h2>
+            <p> {{ article.content }} </p>
+            <p class="fontDate"> {{ article.created_at}} </p>
+
+        </article>
+
+    </main>
+
+{% include('partial/footer.html.twig') %}

@@ -1,4 +1,4 @@
-<?php require_once ('../template/partial/header.php');?>
+{% include('partial/header.html.twig') %}
 
 <main>
 
@@ -20,14 +20,13 @@
     </form>
 
 
+    {% if isRequestOk %}
 
-    <?php if($isRequestOk) { ?>
+        <p class="messageOk"> L'article a bien été enregistré en BDD </p>
 
-        <p class="messageOk">L'article a bien été enregistré en BDD</p>
-
-    <?php } ?>
+    {% endif %}
 
 </main>
 
 
-<?php require_once ('../template/partial/footer.php');?>
+{% include('partial/footer.html.twig') %}

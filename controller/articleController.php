@@ -20,7 +20,18 @@ class ArticleController
             $isRequestOk = $articleRepository -> insert($titre, $content, $created_at);
         }
 
-        require_once('../template/page/addArticleView.php');
+        // On fait l'appel twig à la place du REQUIRE
+        // On indique où se trouvent tous les fichiers twig
+        $loader = new \Twig\Loader\FilesystemLoader('../template');
+        // Création de l'objet $twig
+        $twig = new \Twig\Environment($loader);
+
+        // On appelle le fichier twig
+        echo $twig->render('page/addArticleView.html.twig', [
+            'isRequestOk' => $isRequestOk
+        ]);
+
+        // require_once('../template/page/addArticleView.html.twig');
     }
 
     public function showArticle() {
@@ -33,7 +44,15 @@ class ArticleController
         // On appelle la méthode qui permet de récupérer un article en fonction de son id
         $article = $articleRepository->findOneById($id);
 
-        require_once ('../template/page/showArticleView.php');
+        // TWIG
+        $loader = new \Twig\Loader\FilesystemLoader('../template');
+        $twig = new \Twig\Environment($loader);
+
+        echo $twig->render('page/showArticleView.html.twig', [
+            'article' => $article
+        ]);
+
+        // require_once('../template/page/showArticleView.html.twig');
     }
 
 
@@ -43,12 +62,26 @@ class ArticleController
         // On instancie le ArticleRepository
         $articleRepository = new ArticleRepository();
         // On appelle la méthode qui permet de supprimer un article en fonction de son id
-        $delete = $articleRepository -> deleteArticleById($id);
+        $deleteOK = $articleRepository -> deleteArticleById($id);
 
 
-        // Redirection sur la page d'accueil avec tous les articles après suppression de l'article
-        header('location: http://localhost/piscine-blog/public/');
-        require_once ('../template/page/deleteArticleView.php');
+        if ($deleteOK) {
+            // Redirection sur la page d'accueil avec tous les articles après suppression de l'article
+            header('location: http://localhost/piscine-blog/public/');
+        } else {
+            // require_once('../template/page/deleteArticleFailView.html.twig');
+
+            // On fait l'appel twig à la place du REQUIRE
+            // On indique où se trouvent tous les fichiers twig
+            $loader = new \Twig\Loader\FilesystemLoader('../template');
+            // Création de l'objet $twig
+            $twig = new \Twig\Environment($loader);
+
+            // On appelle le fichier twig
+            echo $twig->render('page/deleteArticleFailView.html.twig', [
+                'deleteOK' => $deleteOK
+            ]);
+        }
 
     }
 

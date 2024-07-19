@@ -7,7 +7,7 @@
 </head>
 
 
-<?php require_once('../template/partial/header.php'); ?>
+<?php require_once('../template/partial/header.html.twig'); ?>
 
     <main>
 
@@ -35,5 +35,5 @@
         
     </main>
 
-<?php require_once('../template/partial/footer.php'); ?>
+<?php require_once('../template/partial/footer.html.twig'); ?>
 

@@ -135,6 +135,14 @@ header {
     justify-content: space-around;
 }
 
+/* --------------- deleteArticleFailView --------------- */
+
+.centerA {
+    width: 20%;
+    margin: auto;
+}
+
+
 
 
 /* --------------- FOOTER --------------- */
